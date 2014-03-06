@@ -16,6 +16,7 @@ $(document).ready(function(){
         //$(".ftext").css("opacity", 0.5);
         $("body").append('<div class="blind"></div>');
         $(".freader").css("color", "white");
+        $(".freader-controls").hide();
         stepText();
     });
 });
@@ -34,14 +35,26 @@ function stepText(){
     }else{
         delay = bdelay;
     }
-    orp = orp(word);
+    orp = getOrp(word);
     
-    $freader.text(word);
+    var orpc = word.charAt(orp);
+    var part1 = word.substring(0, orp);
+    var part2 = word.substring(orp+1, word.length);
+
+    console.log(part1 + "|" + orpc + "|" + part2);
+
+    var left = /[i]/.test(orpc+"")?".leftS":"leftB";
+    var right = /[m]/.test(orpc+"")?".rightB":"rightS";
+    
+    $freader.html("<span class=\"" + left + "\">"+ part1 + "</span><span class=\"orp\">" + orpc +
+            "</span><span class=\"" + right  + "\">"  + part2 + "</span>");
+    
+    //$freader.text(word);
 
     timer = setInterval(stepText,delay);
 
 }
-function orp(word){
+function getOrp(word){
     if (word.length > 13)
         return 4;
     else

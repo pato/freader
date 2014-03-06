@@ -1,5 +1,5 @@
 .freader{
-    font-size: 7em;
+    font-size: 4em;
     text-align: center;
     webkit-animation-duration: 1s;
     moz-animation-duration: 1s;
@@ -20,7 +20,13 @@
     left:0; 
     position:fixed; 
 }
-h1:nth-letter(0){
+.leftS{position:absolute;right: 50%;}
+.leftB{position:absolute;right: 50%;}
+.rightS{position:absolute;left: 53%;}
+.rightB{position:absolute;left: 55%;}
+.orp{
+    position: absolute;
+    left: 50%;
     color:red;
 }
 
