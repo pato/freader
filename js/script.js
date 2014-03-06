@@ -29,6 +29,12 @@ $(document).ready(function(){
         stepText();
     });
 
+    $("#freader-pause").click(function(){
+        clearInterval(timer);
+        $("#freader-start").show();
+        $("#freader-pause").hide();
+    });
+
     $("#speed").change(function(){
         bdelay = 300-$(this).val();
         cdelay = bdelay*1.5;
