@@ -2,9 +2,9 @@ var textarray;
 var i;
 var timer;
 var $freader;
-var bdelay = 150;
-var cdelay = bdelay*2;
-var pdelay = bdelay*3;
+var bdelay = 200;
+var cdelay = bdelay*1.5;
+var pdelay = bdelay*2.5;
 
 $(document).ready(function(){
     var text = $(".ftext p").text();
@@ -18,7 +18,7 @@ $(document).ready(function(){
 
     $("#freader-start").click(function(){
         $("body").append('<div class="blind"></div>');
-        $(".freader").css("color", "white");
+        //$(".freader").css("color", "white");
         $("#freader-start").hide();
         $("#freader-pause").show();
         stepText();
