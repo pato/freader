@@ -1,7 +1,11 @@
 var textarray;
 var i;
 var timer;
+var speed;
+
 var $freader;
+var $wpm;
+
 var bdelay = 200;
 var cdelay = bdelay*1.5;
 var pdelay = bdelay*2.5;
@@ -12,6 +16,7 @@ $(document).ready(function(){
     i = 0;
 
     $freader = $(".freader p");
+    $wpm = $("#wpm");
 
     $("#freader-pause").hide();
     $(".freader p").text("Harry");
@@ -25,9 +30,12 @@ $(document).ready(function(){
     });
 
     $("#speed").change(function(){
-        bdelay = $(this).val();
+        bdelay = 300-$(this).val();
         cdelay = bdelay*1.5;
         pdelay = bdelay*2.5;
+
+        speed = (60*1000)/bdelay;
+        $wpm.text(Math.round(speed) + " WPM");
     });
 });
 
