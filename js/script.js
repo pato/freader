@@ -5,6 +5,7 @@ $(document).ready(function(){
     var text = $(".ftext p").text();
     textarray = text.split(" ");
     i = 0;
+    $(".freader p").text("Harry");
    $("#freader-start").click(function(){
        setInterval(stepText,150);
    }); 
