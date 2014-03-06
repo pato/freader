@@ -13,7 +13,9 @@ $(document).ready(function(){
     $(".freader p").text("Harry");
     $freader = $(".freader p");
     $("#freader-start").click(function(){
-        $(".ftext").css("opacity", 0.5);
+        //$(".ftext").css("opacity", 0.5);
+        $("body").append('<div class="blind"></div>');
+        $(".freader").css("color", "white");
         stepText();
     });
 });
