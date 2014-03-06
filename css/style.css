@@ -1,6 +1,8 @@
 .freader{
     font-size: 7em;
     text-align: center;
+    webkit-animation-duration: 1s;
+    moz-animation-duration: 1s;
 }
 .freader-controls{
     text-align:center;

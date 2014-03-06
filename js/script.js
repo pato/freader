@@ -12,5 +12,8 @@ $(document).ready(function(){
 });
 
 function stepText(){
-    $(".freader p").text(textarray[i++]);
+    $freader = $(".freader p");
+
+    $freader.text(textarray[i++]);
+    $freader.addClass('animated fadeIn');
 }
