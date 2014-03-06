@@ -20,3 +20,7 @@
     left:0; 
     position:fixed; 
 }
+h1:nth-letter(0){
+    color:red;
+}
+

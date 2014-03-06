@@ -26,16 +26,24 @@ function stepText(){
     var word = textarray[i++];
     var delay;
 
-    $freader.text(word);
     //if (~word.indexOf(".")){
-    if (/[!?.]/.test(word)){
+    if (/[!?\.;]/.test(word)){
         delay = pdelay;
     }else if (~word.indexOf(",")){
         delay = cdelay;
     }else{
         delay = bdelay;
     }
+    orp = orp(word);
+    
+    $freader.text(word);
 
     timer = setInterval(stepText,delay);
 
+}
+function orp(word){
+    if (word.length > 13)
+        return 4;
+    else
+        return [0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3][word.length];
 }
