@@ -24,13 +24,7 @@
     left:0; 
     position:fixed; 
 }
-.leftS{position:absolute;right: 50%;}
-.leftB{position:absolute;right: 50%;}
-.rightS{position:absolute;left: 53%;}
-.rightB{position:absolute;left: 55%;}
 .orp{
-    position: absolute;
-    left: 50%;
     color:red;
 }
 

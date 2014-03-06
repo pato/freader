@@ -10,11 +10,13 @@ $(document).ready(function(){
     var text = $(".ftext p").text();
     textarray = text.split(" ");
     i = 0;
+
+    $freader = $(".freader p");
+
     $("#freader-pause").hide();
     $(".freader p").text("Harry");
-    $freader = $(".freader p");
+
     $("#freader-start").click(function(){
-        //$(".ftext").css("opacity", 0.5);
         $("body").append('<div class="blind"></div>');
         $(".freader").css("color", "white");
         $("#freader-start").hide();
@@ -29,10 +31,9 @@ function stepText(){
     var word = textarray[i++];
     var delay;
 
-    //if (~word.indexOf(".")){
     if (/[!?\.;]/.test(word)){
         delay = pdelay;
-    }else if (~word.indexOf(",")){
+    }else if (~(word.indexOf(","))){
         delay = cdelay;
     }else{
         delay = bdelay;
@@ -43,17 +44,30 @@ function stepText(){
     var part1 = word.substring(0, orp);
     var part2 = word.substring(orp+1, word.length);
 
-    console.log(part1 + "|" + orpc + "|" + part2);
-
     var left = /[i]/.test(orpc+"")?".leftS":"leftB";
     var right = /[m]/.test(orpc+"")?".rightB":"rightS";
     
-    //$freader.html("<span class=\"" + left + "\">"+ part1 + "</span><span class=\"orp\">" + orpc +
-            //"</span><span class=\"" + right  + "\">"  + part2 + "</span>");
-    
-    $freader.text(word);
+    var nbsp = "&nbsp;";
 
-    timer = setInterval(stepText,delay);
+    var lspaces = Math.max(part1.length, part2.length) - part1.length;
+    var rspaces = Math.max(part1.length, part2.length) - part2.length;
+    
+    var correctWord = "";
+
+    for (var j=0;j<lspaces;j++) correctWord += nbsp;
+    
+    correctWord += part1;
+
+    correctWord += "<span class=\"orp\">" + orpc + "</span>";
+
+    correctWord += part2;
+
+    for (var j=0;j<rspaces;j++) correctWord += nbsp;
+    
+    $freader.html(correctWord);
+
+    if (i<textarray.length)
+        timer = setInterval(stepText,delay);
 
 }
 function getOrp(word){
