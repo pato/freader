@@ -1,5 +1,8 @@
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+
 .freader{
     font-size: 4em;
+    font-family: 'Inconsolata', sans-serif;
     text-align: center;
     webkit-animation-duration: 1s;
     moz-animation-duration: 1s;
@@ -9,6 +12,7 @@
 }
 .freader-controls{
     text-align:center;
+    z-index:15;
 }
 .blind{
     opacity:0.5; 

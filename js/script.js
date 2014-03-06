@@ -10,13 +10,15 @@ $(document).ready(function(){
     var text = $(".ftext p").text();
     textarray = text.split(" ");
     i = 0;
+    $("#freader-pause").hide();
     $(".freader p").text("Harry");
     $freader = $(".freader p");
     $("#freader-start").click(function(){
         //$(".ftext").css("opacity", 0.5);
         $("body").append('<div class="blind"></div>');
         $(".freader").css("color", "white");
-        $(".freader-controls").hide();
+        $("#freader-start").hide();
+        $("#freader-pause").show();
         stepText();
     });
 });
