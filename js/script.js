@@ -46,10 +46,10 @@ function stepText(){
     var left = /[i]/.test(orpc+"")?".leftS":"leftB";
     var right = /[m]/.test(orpc+"")?".rightB":"rightS";
     
-    $freader.html("<span class=\"" + left + "\">"+ part1 + "</span><span class=\"orp\">" + orpc +
-            "</span><span class=\"" + right  + "\">"  + part2 + "</span>");
+    //$freader.html("<span class=\"" + left + "\">"+ part1 + "</span><span class=\"orp\">" + orpc +
+            //"</span><span class=\"" + right  + "\">"  + part2 + "</span>");
     
-    //$freader.text(word);
+    $freader.text(word);
 
     timer = setInterval(stepText,delay);
 
