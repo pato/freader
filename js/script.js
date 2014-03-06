@@ -23,6 +23,12 @@ $(document).ready(function(){
         $("#freader-pause").show();
         stepText();
     });
+
+    $("#speed").change(function(){
+        bdelay = $(this).val();
+        cdelay = bdelay*1.5;
+        pdelay = bdelay*2.5;
+    });
 });
 
 function stepText(){
